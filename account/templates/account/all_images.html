@@ -1,0 +1,13 @@
+{% extends 'account/base.html' %}
+
+{% block title %} All Images {% endblock %}
+
+{% block body %}
+
+{% for i in images %}
+<div class="container">
+<img src="{{i.image.url}}" alt="...." class="w-25">
+</div>
+{% endfor %}
+
+{% endblock %}

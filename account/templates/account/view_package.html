@@ -1,0 +1,27 @@
+{% extends 'account/base.html' %}
+
+{% block title %} View Packages {% endblock %}
+
+{% block body %}
+
+<h1><b>Your Packages</b></h1>
+<br>
+{% for i in package %}
+<div class="card" style="width: 18rem;">
+    <img src="{{i.package_image.url}}" class="card-img-top" alt="...">
+    <div class="card-body">
+        <h5 class="card-title"><b>Package Name:</b> {{i.package_name}}</h5>
+        <h5 class="card-title"><b>Name:</b> {{i.user.first_name}} {{i.user.last_name}}</h5>
+        <h5 class="card-title"><b>Username:</b> {{i.user}}</h5>
+        <p class="card-text"><b>About:</b> {{i.about}}</p>
+        <p class="card-text"><b>Category:</b> {{i.category}}</p>
+        <p class="card-text"><b>Cost:</b> {{i.cost}}</p>
+
+        <a href="{% url 'update_package' pk1=i.id %}" class="btn btn-warning">Update</a>
+        <a href="{% url 'delete_package' pk2=i.id %}" class="btn btn-danger">Delete</a>
+    </div>
+</div>
+{% endfor %}
+
+
+{% endblock %}

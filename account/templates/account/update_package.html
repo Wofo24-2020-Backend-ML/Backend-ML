@@ -1,0 +1,14 @@
+{% extends 'account/base.html' %}
+
+{% block title %} Update Package {% endblock %}
+
+
+{% block body %}
+<div class="container">
+<form method='POST' action="" enctype="multipart/form-data">
+{% csrf_token %}
+{{form.as_p}}
+<input type="submit">
+</form>
+</div>
+{% endblock %}

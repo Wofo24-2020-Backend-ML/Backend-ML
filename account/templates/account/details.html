@@ -1,0 +1,31 @@
+{% extends 'account/base.html' %}
+
+{% block title %} Details {% endblock %}
+
+{% block body %}
+
+<div class="row">
+    <div class="container">
+        <img src="{{detail.user.professional.logo.url}}" alt="" class="rounded float-left w-25">
+    </div>
+</div>
+
+<div class="container">
+    <h4><b>Name:</b> {{detail.user.first_name}} {{detail.user.last_name}}</h4>
+    <p><b>Service Charge:</b> {{detail.service_charge}}</p>
+    <p><b>Contact Number:</b> {{detail.phone_no}}</p>
+    <p><b>Job Completed:</b> {{detail.job_completed}}</p>
+    <p><b>Address:</b> {{detail.address}}</p>
+    <p><b>SubCategory:</b></p>
+    {% for sub_category in subcategories %}
+    <ul>
+    <li>{{sub_category}}</li>
+    </ul>
+    {% endfor %}
+</div>
+
+<div class="container my-5">
+    <button class="btn btn-primary">Follow</button>
+</div>
+
+{% endblock %}

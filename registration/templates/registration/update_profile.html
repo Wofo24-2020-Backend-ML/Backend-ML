@@ -1,0 +1,22 @@
+{%  extends 'account/base.html' %}
+{% load static %}
+
+{% block title %} Update Profile {% endblock %}
+
+{% block body %}
+<div class="container">
+<form action="" method="POST">
+{% csrf_token %}
+{{user_form.as_p}}
+{{professional_form.as_p}}
+<input type="submit" value="Update">
+</form>
+</div>
+
+<div class="container">
+{% for message in messages %}
+{{message}}
+{% endfor %}
+</div>
+
+{% endblock %}

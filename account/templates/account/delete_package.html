@@ -1,0 +1,15 @@
+{% extends 'account/base.html' %}
+
+{% block title %} View Packages {% endblock %}
+
+{% block body %}
+
+<h2><b>Are you sure you want to delete --> {{package.package_name}}??</b></h2>
+<br>
+<form action="" method='POST' action="{% url 'delete_package' package.id %}">
+{% csrf_token %}
+<button class="btn btn-secondary"><a href="{% url 'home' %}">Cancel</a></button>
+
+<button class="btn btn-danger" type="submit">Delete</button>
+</form>
+{% endblock %}
